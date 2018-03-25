@@ -1,0 +1,7 @@
+site_name: Path V - Keeping my though and notes
+theme:
+  name: 'material'
+
+pages:
+  - Home: index.md
+  - Storage: storage.md
