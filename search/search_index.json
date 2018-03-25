@@ -1,0 +1,39 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Chang-Yi's notes\n\n\nJust keeping some notes in my work or learned from pet projects.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#chang-yis-notes", 
+            "text": "Just keeping some notes in my work or learned from pet projects.", 
+            "title": "Chang-Yi's notes"
+        }, 
+        {
+            "location": "/storage/", 
+            "text": "Non-interactive Manipulate Disk Partitions\n\n\nIt might be useful, when you need to automation it in your Ansible playbook or preseed file.\n\n\nPrerequiste\n\n\nLet's suppose you are working on Ubuntu 14.04/16.04\nInstall tools gdisk with\n\n\n sudo apt-get install -y gdisk\n\n\n\n\nRemove all partitions on specific disk\n\n\nChange /dev/sdb to your device path.\n\n\n sgdisk --zap-all --clear --mbrtogpt /dev/sdb\n\n\n\n\nCreate single disk partiton(Linux filesystem)\n\n\nYou cand list support types with following commands\n\n\n sgdisk -L\n\n\n\n\nWe take 8300 (Linux filesystem) as example, and create a partition that cover all available sectors on \n/dev/sdb\n.\n\n\n sgdisk -N 1 -t 1:8300  /dev/sdb\n\n\n\n\nDon't forget reboot your system to take effect.", 
+            "title": "Storage"
+        }, 
+        {
+            "location": "/storage/#non-interactive-manipulate-disk-partitions", 
+            "text": "It might be useful, when you need to automation it in your Ansible playbook or preseed file.", 
+            "title": "Non-interactive Manipulate Disk Partitions"
+        }, 
+        {
+            "location": "/storage/#prerequiste", 
+            "text": "Let's suppose you are working on Ubuntu 14.04/16.04\nInstall tools gdisk with   sudo apt-get install -y gdisk", 
+            "title": "Prerequiste"
+        }, 
+        {
+            "location": "/storage/#remove-all-partitions-on-specific-disk", 
+            "text": "Change /dev/sdb to your device path.   sgdisk --zap-all --clear --mbrtogpt /dev/sdb", 
+            "title": "Remove all partitions on specific disk"
+        }, 
+        {
+            "location": "/storage/#create-single-disk-partitonlinux-filesystem", 
+            "text": "You cand list support types with following commands   sgdisk -L  We take 8300 (Linux filesystem) as example, and create a partition that cover all available sectors on  /dev/sdb .   sgdisk -N 1 -t 1:8300  /dev/sdb  Don't forget reboot your system to take effect.", 
+            "title": "Create single disk partiton(Linux filesystem)"
+        }
+    ]
+}
