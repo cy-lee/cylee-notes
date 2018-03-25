@@ -11,6 +11,51 @@
             "title": "Chang-Yi's notes"
         }, 
         {
+            "location": "/linux-net-cmd/", 
+            "text": "Linux Network Related Commands\n\n\nAdd/Remove Address With ip Commands\n\n\nAdd IP address\n\n\n# check ip address\nsudo ip a\n\n\n\n\nAssume you want assign 10.1.1.10 with netmask 255.255.255.0 to device ens3\n\n\nsudo ip a add 10.1.1.10/24 dev ens3\n\n\n\n\nRemove Address\n\n\nRemove assigned IP 10.1.1.10 from device ens3\n\n\nsudo ip a del 10.1.1.10/24 dev ens3\n\n\n\n\nBring up/down NIC With ip Commands\n\n\nBring up NIC\n\n\nBefore you start, please make sure it was connected(use \nethtool\n to check it).\n\n\nWe take \nens3\n as example:\n\n\n# Check devices link status\nsudo ip l\n\nsudo ip l set dev ens3 up\n\n\n\n\nBring down NIC\n\n\n# Check devices link status\nsudo ip l\n\nsudo ip l set dev ens3 down\n\n\n\n\nScan all up host with nmap\n\n\nSuppose you want to scan 172.16.0.0/24 all up hosts\n\n\nsudo nmap -sn 172.16.0.0/24\n\n\n\n\nIt will list all up hosts and their MAC address.", 
+            "title": "Net Commands"
+        }, 
+        {
+            "location": "/linux-net-cmd/#linux-network-related-commands", 
+            "text": "", 
+            "title": "Linux Network Related Commands"
+        }, 
+        {
+            "location": "/linux-net-cmd/#addremove-address-with-ip-commands", 
+            "text": "", 
+            "title": "Add/Remove Address With ip Commands"
+        }, 
+        {
+            "location": "/linux-net-cmd/#add-ip-address", 
+            "text": "# check ip address\nsudo ip a  Assume you want assign 10.1.1.10 with netmask 255.255.255.0 to device ens3  sudo ip a add 10.1.1.10/24 dev ens3", 
+            "title": "Add IP address"
+        }, 
+        {
+            "location": "/linux-net-cmd/#remove-address", 
+            "text": "Remove assigned IP 10.1.1.10 from device ens3  sudo ip a del 10.1.1.10/24 dev ens3", 
+            "title": "Remove Address"
+        }, 
+        {
+            "location": "/linux-net-cmd/#bring-updown-nic-with-ip-commands", 
+            "text": "", 
+            "title": "Bring up/down NIC With ip Commands"
+        }, 
+        {
+            "location": "/linux-net-cmd/#bring-up-nic", 
+            "text": "Before you start, please make sure it was connected(use  ethtool  to check it).  We take  ens3  as example:  # Check devices link status\nsudo ip l\n\nsudo ip l set dev ens3 up", 
+            "title": "Bring up NIC"
+        }, 
+        {
+            "location": "/linux-net-cmd/#bring-down-nic", 
+            "text": "# Check devices link status\nsudo ip l\n\nsudo ip l set dev ens3 down", 
+            "title": "Bring down NIC"
+        }, 
+        {
+            "location": "/linux-net-cmd/#scan-all-up-host-with-nmap", 
+            "text": "Suppose you want to scan 172.16.0.0/24 all up hosts  sudo nmap -sn 172.16.0.0/24  It will list all up hosts and their MAC address.", 
+            "title": "Scan all up host with nmap"
+        }, 
+        {
             "location": "/storage/", 
             "text": "Non-interactive Manipulate Disk Partitions\n\n\nIt might be useful, when you need to automation it in your Ansible playbook or preseed file.\n\n\nPrerequiste\n\n\nLet's suppose you are working on Ubuntu 14.04/16.04\nInstall tools gdisk with follwing command:\n\n\n sudo apt-get install -y gdisk\n\n\n\n\nRemove all partitions on specific disk\n\n\nChange \n/dev/sdb\n to match your device path.\n\n\n sgdisk --zap-all --clear --mbrtogpt /dev/sdb\n\n\n\n\nCreate single disk partiton(Linux filesystem)\n\n\nYou can list all support file system types with following command:\n\n\n sgdisk -L\n\n\n\n\nWe take 8300 (Linux filesystem) as example, and create a partition that cover all available sectors on \n/dev/sdb\n.\n\n\n sgdisk -N 1 -t 1:8300  /dev/sdb\n\n\n\n\nWhen it finish, don't forget reboot your system to take effect.", 
             "title": "Storage"
