@@ -321,17 +321,17 @@
 <p>It might be useful, when you need to automation it in your Ansible playbook or preseed file.</p>
 <h3 id="prerequiste">Prerequiste</h3>
 <p>Let's suppose you are working on Ubuntu 14.04/16.04
-Install tools gdisk with</p>
+Install tools gdisk with follwing command:</p>
 <pre><code class="shell"> sudo apt-get install -y gdisk
 </code></pre>
 
 <h3 id="remove-all-partitions-on-specific-disk">Remove all partitions on specific disk</h3>
-<p>Change /dev/sdb to your device path.</p>
+<p>Change <strong>/dev/sdb</strong> to match your device path.</p>
 <pre><code class="shell"> sgdisk --zap-all --clear --mbrtogpt /dev/sdb
 </code></pre>
 
 <h3 id="create-single-disk-partitonlinux-filesystem">Create single disk partiton(Linux filesystem)</h3>
-<p>You cand list support types with following commands</p>
+<p>You can list all support file system types with following command:</p>
 <pre><code class="shell"> sgdisk -L
 </code></pre>
 
@@ -339,7 +339,7 @@ Install tools gdisk with</p>
 <pre><code class="shell"> sgdisk -N 1 -t 1:8300  /dev/sdb
 </code></pre>
 
-<p>Don't forget reboot your system to take effect.</p>
+<p>When it finish, don't forget reboot your system to take effect.</p>
                 
                   
                 
