@@ -79,6 +79,21 @@
             "location": "/storage/#create-single-disk-partitonlinux-filesystem", 
             "text": "You can list all support file system types with following command:   sgdisk -L  We take 8300 (Linux filesystem) as example, and create a partition that cover all available sectors on  /dev/sdb .   sgdisk -N 1 -t 1:8300  /dev/sdb  When it finish, don't forget reboot your system to take effect.", 
             "title": "Create single disk partiton(Linux filesystem)"
+        }, 
+        {
+            "location": "/ceph/", 
+            "text": "Ceph related notes\n\n\nClient side library\n\n\n\n\nclass RadosClient dissect", 
+            "title": "Ceph"
+        }, 
+        {
+            "location": "/ceph/#ceph-related-notes", 
+            "text": "", 
+            "title": "Ceph related notes"
+        }, 
+        {
+            "location": "/ceph/#client-side-library", 
+            "text": "class RadosClient dissect", 
+            "title": "Client side library"
         }
     ]
 }

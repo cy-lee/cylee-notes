@@ -36,7 +36,7 @@
     
     
       
-        <title>Storage - Path V - Keeping my though and notes</title>
+        <title>Ceph - Path V - Keeping my though and notes</title>
       
     
     
@@ -70,7 +70,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#non-interactive-manipulate-disk-partitions" tabindex="1" class="md-skip">
+      <a href="#ceph-related-notes" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -96,7 +96,7 @@
                 Path V - Keeping my though and notes
               </span>
               <span class="md-header-nav__topic">
-                Storage
+                Ceph
               </span>
             
           
@@ -189,6 +189,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../storage/" title="Storage" class="md-nav__link">
+      Storage
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -196,54 +208,31 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Storage
+        Ceph
       </label>
     
-    <a href="./" title="Storage" class="md-nav__link md-nav__link--active">
-      Storage
+    <a href="./" title="Ceph" class="md-nav__link md-nav__link--active">
+      Ceph
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#non-interactive-manipulate-disk-partitions" title="Non-interactive Manipulate Disk Partitions" class="md-nav__link">
-    Non-interactive Manipulate Disk Partitions
+  <a href="#client-side-library" title="Client side library" class="md-nav__link">
+    Client side library
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequiste" title="Prerequiste" class="md-nav__link">
-    Prerequiste
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove-all-partitions-on-specific-disk" title="Remove all partitions on specific disk" class="md-nav__link">
-    Remove all partitions on specific disk
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-single-disk-partitonlinux-filesystem" title="Create single disk partiton(Linux filesystem)" class="md-nav__link">
-    Create single disk partiton(Linux filesystem)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -255,18 +244,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../ceph/" title="Ceph" class="md-nav__link">
-      Ceph
-    </a>
   </li>
 
     
@@ -284,41 +261,16 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#non-interactive-manipulate-disk-partitions" title="Non-interactive Manipulate Disk Partitions" class="md-nav__link">
-    Non-interactive Manipulate Disk Partitions
+  <a href="#client-side-library" title="Client side library" class="md-nav__link">
+    Client side library
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequiste" title="Prerequiste" class="md-nav__link">
-    Prerequiste
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove-all-partitions-on-specific-disk" title="Remove all partitions on specific disk" class="md-nav__link">
-    Remove all partitions on specific disk
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-single-disk-partitonlinux-filesystem" title="Create single disk partiton(Linux filesystem)" class="md-nav__link">
-    Create single disk partiton(Linux filesystem)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -339,31 +291,11 @@
               
                 
                 
-                  <h1>Storage</h1>
-                
-                <h2 id="non-interactive-manipulate-disk-partitions">Non-interactive Manipulate Disk Partitions</h2>
-<p>It might be useful, when you need to automation it in your Ansible playbook or preseed file.</p>
-<h3 id="prerequiste">Prerequiste</h3>
-<p>Let's suppose you are working on Ubuntu 14.04/16.04
-Install tools gdisk with follwing command:</p>
-<pre><code class="shell"> sudo apt-get install -y gdisk
-</code></pre>
-
-<h3 id="remove-all-partitions-on-specific-disk">Remove all partitions on specific disk</h3>
-<p>Change <strong>/dev/sdb</strong> to match your device path.</p>
-<pre><code class="shell"> sgdisk --zap-all --clear --mbrtogpt /dev/sdb
-</code></pre>
-
-<h3 id="create-single-disk-partitonlinux-filesystem">Create single disk partiton(Linux filesystem)</h3>
-<p>You can list all support file system types with following command:</p>
-<pre><code class="shell"> sgdisk -L
-</code></pre>
-
-<p>We take 8300 (Linux filesystem) as example, and create a partition that cover all available sectors on <strong>/dev/sdb</strong>.</p>
-<pre><code class="shell"> sgdisk -N 1 -t 1:8300  /dev/sdb
-</code></pre>
-
-<p>When it finish, don't forget reboot your system to take effect.</p>
+                <h1 id="ceph-related-notes">Ceph related notes</h1>
+<h2 id="client-side-library">Client side library</h2>
+<ul>
+<li><a href="ceph/rados-client.md">class RadosClient dissect</a></li>
+</ul>
                 
                   
                 
@@ -384,7 +316,7 @@ Install tools gdisk with follwing command:</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../linux-net-cmd/" title="Net Commands" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../storage/" title="Storage" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -393,25 +325,11 @@ Install tools gdisk with follwing command:</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Net Commands
+                Storage
               </span>
             </div>
           </a>
         
-        
-          <a href="../ceph/" title="Ceph" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Ceph
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
