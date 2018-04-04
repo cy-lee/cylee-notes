@@ -26,11 +26,13 @@
     
 
     
+        
     <url>
-     <loc>/ceph/</loc>
+     <loc>/ceph/rados-client/</loc>
      <lastmod>2018-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     
 
 </urlset>

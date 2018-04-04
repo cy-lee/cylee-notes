@@ -81,19 +81,24 @@
             "title": "Create single disk partiton(Linux filesystem)"
         }, 
         {
-            "location": "/ceph/", 
-            "text": "Ceph related notes\n\n\nClient side library\n\n\n\n\nclass RadosClient dissect", 
-            "title": "Ceph"
+            "location": "/ceph/rados-client/", 
+            "text": "Introduction\n\n\nThe RadosClient class act as major role between client and Ceph cluster node communication.\n\n\nClass diagram\n\n\nI skip lot of detail information. \n\n\n\n\nConnect to cluster\n\n\nInside \nlibrados::RadosClient::connect()\n, it will perform following steps.\n\n\n\n\nInitial the \nMonClient\n and fetch monitor map \n config.\n\n\nCreate \nMessenger\n instance based on pre-config type.\n\n\nCreate \nObjecter\n instance and call \nObjecter::init()", 
+            "title": "RadosClient"
         }, 
         {
-            "location": "/ceph/#ceph-related-notes", 
-            "text": "", 
-            "title": "Ceph related notes"
+            "location": "/ceph/rados-client/#introduction", 
+            "text": "The RadosClient class act as major role between client and Ceph cluster node communication.", 
+            "title": "Introduction"
         }, 
         {
-            "location": "/ceph/#client-side-library", 
-            "text": "class RadosClient dissect", 
-            "title": "Client side library"
+            "location": "/ceph/rados-client/#class-diagram", 
+            "text": "I skip lot of detail information.", 
+            "title": "Class diagram"
+        }, 
+        {
+            "location": "/ceph/rados-client/#connect-to-cluster", 
+            "text": "Inside  librados::RadosClient::connect() , it will perform following steps.   Initial the  MonClient  and fetch monitor map   config.  Create  Messenger  instance based on pre-config type.  Create  Objecter  instance and call  Objecter::init()", 
+            "title": "Connect to cluster"
         }
     ]
 }
