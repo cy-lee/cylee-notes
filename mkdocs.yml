@@ -7,4 +7,4 @@ pages:
   - Net Commands: linux-net-cmd.md
   - Storage: storage.md
   - Ceph: 
-    - 'RadosClient': ceph/rados-client.md
+    - 'RadosClient': 'ceph/rados-client.md'
